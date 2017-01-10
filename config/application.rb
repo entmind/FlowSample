@@ -31,5 +31,12 @@ module FlowSample
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    # 「rails g」コマンドで余計なhelperやassetsを生成しないようにする。
+    # もう一度pull requestするために、pushしてみる。
+    config.generators do |g|
+      g.assets    false
+      g.helper    false
+    end
   end
 end
